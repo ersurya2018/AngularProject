@@ -1,0 +1,28 @@
+.outer
+{
+    min-height: 100px;
+    width: 1000px;
+    margin: 0px auto;
+    border:1px solid red;
+    border-radius: 20px 0px 20px 0px;
+    margin-top: 10px;
+    padding-top: 30px;
+}
+.reg
+{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+    color: green;
+    /* border: 1px solid; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.inner
+{
+    min-height: 100px;
+    width: 800px;
+    margin: 0px auto;
+    //border:1px solid red; 
+}

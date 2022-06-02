@@ -1,0 +1,59 @@
+
+<html>
+  <head>Registration form</head>
+  <body>
+    <!-- <div class="outer">
+      <div class="reg">Registration Form</div>
+      <hr/>
+      <div class="inner">
+         <form #regForm="ngForm" (ngSubmit)=regform(regForm.value)>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your name </mat-label>
+            <input matInput required="true" maxlength="20">
+            <mat-hint align="end">Min 5 character allow</mat-hint>
+          </mat-form-field>
+<br>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Enter Father name </mat-label>
+            <input matInput required="true" maxlength="20">
+            <mat-hint align="end">Min 5 character allow</mat-hint>
+          </mat-form-field>
+         </form> 
+      </div>
+    </div>
+ -->
+
+    <hr/>
+    <hr/><hr/>
+    <hr/>
+    <form [formGroup]="LoginForm" (ngSubmit)="loginUser()">
+      <input type="text" placeholder="Enter Your Name.." formControlName="Name"/>
+        <br/>
+        <span style="color:red; font-family: 'Times New Roman';" *ngIf="namevalidator && namevalidator.invalid && namevalidator.touched">Name field is required*</span>
+        <br/>
+      <input type="text" placeholder="Enter Father Name.." formControlName="Fname"/>
+      <br/>
+      <span style="color:red; font-family: 'Times New Roman';" *ngIf="fnamevalidator && fnamevalidator.invalid && fnamevalidator.touched">Father name is required*</span>
+      <br/>
+
+      <input type="number" placeholder="Enter Mobile No.." formControlName="mobile"/>
+      <br/>
+      <span style="color: red; font-family: 'Times New Roman';" *ngIf="mobileValidator && mobileValidator.invalid && mobileValidator.touched">Mobile number required*</span>
+      <br/>
+      Enter Dob : 
+      <input type="date" placeholder="Enter Dob.." formControlName="Dob"/>
+      <br/>
+      <span style="color:red; font-family:'Times New Roman'; " *ngIf="Dobvalidator && Dobvalidator.invalid && Dobvalidator.touched">Date is required</span>
+      <br/>
+      
+      <!-- Gender: <input type="radio" /> : Male <input type="radio" /> : Female  -->
+      <br/><br/>
+      <input type="password" placeholder="Enter the password.." formControlName="Password"/>
+      <br/>
+        <span style="color:red; font-family:'Times New Roman'; " *ngIf="passvalidator && passvalidator.invalid && passvalidator.touched">Password is required*</span>
+      <br/>
+      <button type="submit" [disabled]="LoginForm.invalid" class="btn btn-success">Login</button>
+    </form>
+  </body>
+</html>
